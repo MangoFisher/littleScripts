@@ -21,3 +21,5 @@ class BlindSpider(scrapy.spiders.Spider):
         filename = response.url.split("/")[-2]
         with open(filename, 'wb') as f:
             f.write(response.body)
+            
+#test 第二次提交
