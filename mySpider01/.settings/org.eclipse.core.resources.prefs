@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//blindSpider/blindSpider/cmdline.py=utf-8
 encoding//blindSpider/blindSpider/items.py=utf-8
 encoding//blindSpider/blindSpider/pipelines.py=utf-8
 encoding//blindSpider/blindSpider/settings.py=utf-8
+encoding//blindSpider/blindSpider/spiders/mySpider.py=utf-8

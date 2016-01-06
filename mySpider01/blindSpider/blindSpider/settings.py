@@ -10,10 +10,12 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'blindSpider'
-
+#原始
 SPIDER_MODULES = ['blindSpider.spiders']
 NEWSPIDER_MODULE = 'blindSpider.spiders'
 
+# SPIDER_MODULES = ['blindSpider.spiders.blindSpider']
+# NEWSPIDER_MODULE = 'blindSpider.spiders.blindSpider'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'blindSpider (+http://www.yourdomain.com)'
