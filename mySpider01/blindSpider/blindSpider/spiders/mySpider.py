@@ -9,7 +9,7 @@ Created on 2016-1-5
 
 import scrapy
 from blindSpider.items import *
-from scrapy import log
+import logging
 
 class BlindSpider(scrapy.spiders.Spider):
     name = "zgd"
@@ -20,7 +20,7 @@ class BlindSpider(scrapy.spiders.Spider):
     ]
 
     def parse(self, response):
-        log.msg("parse function begined", _level=log.WARNING)
+        logging.warning("parse function begined")
         for sel in response.xpath('//ul/li'):
             item = BlindSpiderItem()
             item['title'] = sel.xpath('a/text()').extract()
