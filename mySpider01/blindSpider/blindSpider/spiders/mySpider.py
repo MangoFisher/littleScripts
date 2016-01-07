@@ -8,7 +8,8 @@ Created on 2016-1-5
 
 
 import scrapy
-from blindSpider.blindSpider.items import *
+from blindSpider.items import *
+from scrapy import log
 
 class BlindSpider(scrapy.spiders.Spider):
     name = "zgd"
@@ -19,6 +20,7 @@ class BlindSpider(scrapy.spiders.Spider):
     ]
 
     def parse(self, response):
+        log.msg("parse function begined", _level=log.WARNING)
         for sel in response.xpath('//ul/li'):
             item = BlindSpiderItem()
             item['title'] = sel.xpath('a/text()').extract()
