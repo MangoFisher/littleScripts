@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+
+s = "ab;cd|efghij,,klmnopqr\tstuvwsyz"
+
+# 多次调用split()
+def mySplit(str, p):
+    res = [str]
+    for d in p:
+        t = []
+        map(lambda x: t.extend(x.split(d)), res)
+        res = t
+    return [x for x in res if x]
+
+print mySplit(s, ";,|\t")
+
+# 正则表达式re.split（）
+import re
+
+res = re.split("[;,\t|]+", s)
+print res
