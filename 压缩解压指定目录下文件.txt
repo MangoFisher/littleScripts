@@ -1,0 +1,28 @@
+# coding=utf-8
+import os, os.path
+import zipfile
+
+
+def zip_dir(dir_name, archive_name):
+    file_list = []
+    if os.path.isfile(dir_name):
+        list.append(dir_name)
+    else:
+        zf = zipfile.ZipFile(archive_name, "w", zipfile.zlib.DEFLATED)
+        for root, dirs, files in os.walk(dir_name):
+            for file in files:
+                file_list.append(os.path.join(root, file))
+        for file in file_list:
+            zf.write(file)
+        zf.close()
+
+
+def unzip_file(archive_name, dst_dir):
+    if not os.path.exists(dst_dir):
+        os.mkdir(dst_dir)
+    zf = zipfile.ZipFile(archive_name, "r", zipfile.zlib.DEFLATED)
+    zf.extractall(dst_dir)
+    zf.close()
+
+
+
